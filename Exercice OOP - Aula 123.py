@@ -207,7 +207,7 @@ class Banco:
 
 
 CC_1 = ContaCorrente('181-0', 123)
-person = Cliente('Jair', 60, CC_1)
+person = Cliente('Ned', 60, CC_1)
 banco = Banco()
 banco.adicionar_cliente(person)
 person.conta.depositar(4000)

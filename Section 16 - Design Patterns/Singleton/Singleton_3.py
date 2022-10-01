@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 class Singleton(type):
@@ -19,6 +19,7 @@ class AppSettings(metaclass=Singleton):
 if __name__ == '__main__':
     as1 = AppSettings()
     as1.tema = 'bright'  # Set as bright.
+
     print(as1.tema)
     as2 = AppSettings()  # When initialized, NOT set as default dark. Keeps bright.
     print(as2.tema)

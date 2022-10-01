@@ -233,8 +233,8 @@ class Client:
     __name: str
     __zone: TypeZone
     __requested_type_car: TypeVehicle
-    __new_service: AbstractServiceFactory = field(default=None, init=False)
-    __vehicle: AbstractProductLuxuryVehicle | AbstractProductPopularVehicle = field(default=None, init=False)
+    __new_service: AbstractServiceFactory = field(init=False)
+    __vehicle: AbstractProductLuxuryVehicle | AbstractProductPopularVehicle = field(init=False)
 
     def __post_init__(self):
 
@@ -303,6 +303,5 @@ if __name__ == '__main__':
 
     for i in range(10):
         name = 'Jojo'
-        choices = [name, choice(available_zones), choice(available_vehicles)]
-        client = Client(*choices)
+        client = Client(name, choice(available_zones), choice(available_vehicles))
         client.pick_up_client()

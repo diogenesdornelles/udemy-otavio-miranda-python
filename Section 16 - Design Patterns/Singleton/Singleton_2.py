@@ -4,13 +4,17 @@ from dataclasses import dataclass
 
 
 def singleton(_class):
-    instances = {}
+    # _class == the class AppSettings
+
+    instances = {}  # new dict will receive instance
 
     def get_class(*args, **kwargs):
         if _class not in instances:
             instances[_class] = _class(*args, **kwargs)
-        return instances[_class]
-
+        print(type(instances[_class]))
+        return instances[_class]  # instances[_class] == the class AppSettings
+    # get_class() return class AppSettings
+    # get_class return function
     return get_class
 
 
